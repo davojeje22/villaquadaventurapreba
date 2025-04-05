@@ -754,3 +754,50 @@ body {
 }
 
 /* La altura original del banner para la página principal sigue siendo 60vh como está definido en tu CSS */
+
+.carousel-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    /* Centra el carrusel */
+    align-items: center;
+    /* Asegura que las flechas estén alineadas verticalmente */
+    width: 100%;
+    max-width: 100%;
+    /* Asegura que el carrusel no se salga de los límites */
+}
+
+.carousel {
+    display: flex;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel-item {
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.carousel-control.left {
+    left: 10px;
+}
+
+.carousel-control.right {
+    right: 10px;
+}
