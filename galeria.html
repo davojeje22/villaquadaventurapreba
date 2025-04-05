@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería - Villaquadaventura</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="styles.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <!-- Banner de video con overlay -->
+    <div class="video-banner">
+        <video autoplay loop muted>
+            <source src="banner.mp4" type="video/mp4">
+            Tu navegador no soporta el formato de video.
+        </video>
+        <div class="banner-overlay">
+            <!-- Header -->
+            <div class="w-full max-w-screen-lg mx-auto flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                    <img src="logo1.jpg" alt="Villaquadaventura logo"
+                        class="w-24 h-24 rounded-full border-2 border-orange-500">
+                    <div class="ml-4">
+                        <h1 class="text-2xl font-bold text-orange-500">villaquadaventura</h1>
+                        <p class="text-sm">Villajoyosa, Costa Blanca, Spain</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-10">
+                <h2 class="highlight-text text-4xl md:text-5xl">GALERÍA</h2>
+                <p class="mt-4 text-xl">Descubre nuestras aventuras</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mx-auto px-4 py-8">
+        <!-- Navigation Tabs -->
+        <div class="nav-tabs">
+            <button class="nav-tab" onclick="window.location.href='index.html'">
+                <i class="fas fa-home mr-2"></i>Home
+            </button>
+            <button class="nav-tab" onclick="window.location.href='redes_sociales.html'">
+                <i class="fas fa-address-book mr-2"></i>Contacto
+            </button>
+            <button class="nav-tab active">
+                <i class="fas fa-images mr-2"></i>Galería
+            </button>
+            <button class="nav-tab" onclick="window.location.href='precios.html'">
+                <i class="fas fa-tag mr-2"></i>Precios
+            </button>
+        </div>
+
+        <!-- Gallery Content -->
+        <div class="mt-8">
+            <h2 class="big-text text-center text-orange-500 mb-8">Nuestra Galería</h2>
+
+            <div class="carousel-container">
+                <div class="carousel" id="gallery-carousel">
+                    <!-- Los elementos del carrusel se generarán con JavaScript -->
+                </div>
+            </div>
+
+            <div class="carousel-controls">
+                <button class="carousel-control" onclick="rotateCarousel(-1)">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="carousel-control" onclick="rotateCarousel(1)">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-8 mt-16">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-orange-500 font-bold text-xl mb-2">TU EXPERTO EN AVENTURAS</p>
+            <p class="text-orange-500 font-bold text-xl">+34 678 61 20 35</p>
+        </div>
+    </footer>
+
+    <script>
+        // Modificar la parte del script en galeria.html
+        // Variables para el carrusel
+        let carouselItems = [];
+        let currentRotation = 0;
+        let itemCount = 0;
+
+        // Simulación de galería con imágenes
+        function initGallery() {
+            // Aquí puedes reemplazar con tus propias imágenes
+            const images = [
+                { src: "imagen1.jpg", caption: "Aventura en las montañas" },
+                { src: "imagen2.jpg", caption: "Ruta panorámica" },
+                { src: "imagen3.jpg", caption: "Explorando calas escondidas" },
+                { src: "imagen4.jpg", caption: "Vistas al mar" },
+                { src: "imagen5.jpg", caption: "Quads en acción" },
+                { src: "imagen6.jpg", caption: "Ruta off-road" }
+            ];
+
+            const carousel = document.getElementById('gallery-carousel');
+            itemCount = images.length;
+
+            // Ajustar el radio según el número de imágenes para mejor visibilidad
+            const radius = 250; // Reducir el radio para mejorar la visibilidad
+
+            images.forEach((img, index) => {
+                const item = document.createElement('div');
+                item.className = 'carousel-item';
+
+                // Calcular la posición en el círculo
+                const angle = (index * (360 / itemCount)) * (Math.PI / 180);
+                const x = Math.sin(angle) * radius;
+                const z = Math.cos(angle) * radius;
+
+                // Aplicar transformación con translateZ reducido para mejor visibilidad
+                item.style.transform = `translateX(${x}px) translateZ(${z}px) rotateY(${index * (360 / itemCount)}deg)`;
+
+                item.innerHTML = `
+            <img src="${img.src}" alt="${img.caption}" class="w-full h-full object-cover">
+            <div class="carousel-item-caption">${img.caption}</div>
+        `;
+                carousel.appendChild(item);
+                carouselItems.push(item);
+            });
+
+            // Inicializar posición
+            updateCarousel();
+        }
+
+        // Rotar el carrusel
+        function rotateCarousel(direction) {
+            currentRotation += direction * (360 / itemCount);
+            updateCarousel();
+        }
+
+        // Actualizar posición del carrusel
+        function updateCarousel() {
+            const carousel = document.getElementById('gallery-carousel');
+            carousel.style.transform = `rotateY(${currentRotation}deg)`;
+
+            // Actualizar visibilidad basada en la posición
+            const activeIndex = (Math.round(-currentRotation / (360 / itemCount)) + itemCount) % itemCount;
+
+            carouselItems.forEach((item, index) => {
+                // Calcular ángulo relativo para determinar si está al frente o detrás
+                const relativeAngle = ((index - activeIndex + itemCount) % itemCount) / itemCount * 360;
+
+                // Si está en semicírculo frontal, mayor opacidad
+                const isFront = relativeAngle > 270 || relativeAngle < 90;
+                item.style.opacity = isFront ? "1" : "0.5";
+                item.style.zIndex = isFront ? "1" : "0";
+
+                if (index === activeIndex) {
+                    item.classList.add('active');
+                } else {
+                    item.classList.remove('active');
+                }
+            });
+        }
+
+        // Inicializar galería cuando la página cargue
+        window.addEventListener('load', initGallery);
+    </script>
+
+    <body class="secondary-page">
+        <!-- El resto del contenido sigue igual -->
+    </body>
+</body>
+
+</html>

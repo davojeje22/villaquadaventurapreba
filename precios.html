@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Precios - Villaquadaventura</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="styles.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <!-- Banner de video con overlay -->
+    <div class="video-banner">
+        <video autoplay loop muted>
+            <source src="banner.mp4" type="video/mp4">
+            Tu navegador no soporta el formato de video.
+        </video>
+        <div class="banner-overlay">
+            <!-- Header -->
+            <div class="w-full max-w-screen-lg mx-auto flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                    <img src="logo1.jpg" alt="Villaquadaventura logo"
+                        class="w-24 h-24 rounded-full border-2 border-orange-500">
+                    <div class="ml-4">
+                        <h1 class="text-2xl font-bold text-orange-500">villaquadaventura</h1>
+                        <p class="text-sm">Villajoyosa, Costa Blanca, Spain</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-10">
+                <h2 class="highlight-text text-4xl md:text-5xl">PRECIOS</h2>
+                <p class="mt-4 text-xl">Nuestras excursiones y tarifas</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mx-auto px-4 py-8">
+        <!-- Navigation Tabs -->
+        <div class="nav-tabs">
+            <button class="nav-tab" onclick="window.location.href='index.html'">
+                <i class="fas fa-home mr-2"></i>Home
+            </button>
+            <button class="nav-tab" onclick="window.location.href='redes_sociales.html'">
+                <i class="fas fa-address-book mr-2"></i>Contacto
+            </button>
+            <button class="nav-tab" onclick="window.location.href='galeria.html'">
+                <i class="fas fa-images mr-2"></i>Galería
+            </button>
+            <button class="nav-tab active">
+                <i class="fas fa-tag mr-2"></i>Precios
+            </button>
+        </div>
+
+        <!-- Prices Content -->
+        <div class="mt-8">
+            <h2 class="big-text text-center text-orange-500">Nuestras Excursiones</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+                <div class="price-card">
+                    <div class="price-tag">80€</div>
+                    <h3 class="text-2xl font-bold text-orange-500">EXCURSIÓN 1 HORA</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+                        <div>
+                            <h4 class="text-lg font-bold mb-2 text-white">Incluye:</h4>
+                            <ul class="list-disc list-inside text-gray-300">
+                                <li>Exploración de ciudad y montañas</li>
+                                <li>Paradas para fotos panorámicas</li>
+                                <li>Guía experto</li>
+                                <li>Equipo de seguridad</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-bold mb-2 text-blue-400">Includes:</h4>
+                            <ul class="list-disc list-inside text-gray-300">
+                                <li>City and mountain exploration</li>
+                                <li>Stops for panoramic photos</li>
+                                <li>Expert guide</li>
+                                <li>Safety equipment</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <button class="adventure-button mt-6" onclick="window.location.href='redes_sociales.html'">
+                        <i class="fas fa-calendar-alt mr-2"></i>Reservar
+                    </button>
+                </div>
+
+                <div class="price-card">
+                    <div class="price-tag">120€</div>
+                    <h3 class="text-2xl font-bold text-orange-500">EXCURSIÓN 2 HORAS</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+                        <div>
+                            <h4 class="text-lg font-bold mb-2 text-white">Incluye:</h4>
+                            <ul class="list-disc list-inside text-gray-300">
+                                <li>Ruta off-road por montañas</li>
+                                <li>Vistas panorámicas al mar</li>
+                                <li>Visita a calas escondidas</li>
+                                <li>Paradas para fotos y descanso</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-bold mb-2 text-blue-400">Includes:</h4>
+                            <ul class="list-disc list-inside text-gray-300">
+                                <li>Off-road mountain route</li>
+                                <li>Panoramic sea views</li>
+                                <li>Visit to hidden coves</li>
+                                <li>Photo and rest stops</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <button class="adventure-button mt-6" onclick="window.location.href='redes_sociales.html'">
+                        <i class="fas fa-calendar-alt mr-2"></i>Reservar
+                    </button>
+                </div>
+            </div>
+
+            <div class="bg-gray-900 p-6 rounded-lg mt-8 text-center">
+                <h3 class="text-xl font-bold mb-2">INFORMACIÓN IMPORTANTE</h3>
+                <p class="mb-2"><i class="fas fa-users text-orange-500 mr-2"></i> <span class="text-blue-400">QUADS DE 2
+                        PLAZAS - SEGUNDO PASAJERO GRATIS</span></p>
+                <p class="mb-2"><i class="fas fa-id-card text-orange-500 mr-2"></i> <span class="text-yellow-500">EL
+                        CONDUCTOR DEBE TENER EL CARNET B EN VIGOR</span></p>
+                <p><i class="fas fa-id-card text-orange-500 mr-2"></i> <span class="text-yellow-500">THE DRIVER MUST
+                        HAVE A VALID CATEGORY B LICENSE</span></p>
+            </div>
+
+            <!-- Formulario de Reserva -->
+            <div class="container-border mt-16">
+                <h3 class="text-2xl font-bold text-orange-500 mb-6">FORMULARIO DE RESERVA</h3>
+                <form class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="flex flex-col space-y-2">
+                        <label for="nombre" class="text-orange-500">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre"
+                            class="p-2 rounded bg-gray-800 border border-gray-700">
+                    </div>
+                    <div class="flex flex-col space-y-2">
+                        <label for="email" class="text-orange-500">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Tu email"
+                            class="p-2 rounded bg-gray-800 border border-gray-700">
+                    </div>
+                    <div class="flex flex-col space-y-2">
+                        <label for="telefono" class="text-orange-500">Teléfono</label>
+                        <input type="tel" id="telefono" name="telefono" placeholder="Tu teléfono"
+                            class="p-2 rounded bg-gray-800 border border-gray-700">
+                    </div>
+                    <div class="flex flex-col space-y-2">
+                        <label for="fecha" class="text-orange-500">Fecha de Reserva</label>
+                        <input type="date" id="fecha" name="fecha"
+                            class="p-2 rounded bg-gray-800 border border-gray-700">
+                    </div>
+                    <div class="flex flex-col space-y-2">
+                        <label for="excursion" class="text-orange-500">Tipo de Excursión</label>
+                        <select id="excursion" name="excursion" class="p-2 rounded bg-gray-800 border border-gray-700">
+                            <option value="1hora">Excursión 1 Hora (80€)</option>
+                            <option value="2horas">Excursión 2 Horas (120€)</option>
+                        </select>
+                    </div>
+                    <div class="flex flex-col space-y-2">
+                        <label for="personas" class="text-orange-500">Número de Personas</label>
+                        <input type="number" id="personas" name="personas" min="1" value="1"
+                            class="p-2 rounded bg-gray-800 border border-gray-700">
+                    </div>
+                    <div class="flex flex-col space-y-2 md:col-span-2">
+                        <label for="mensaje" class="text-orange-500">Mensaje</label>
+                        <textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuéntanos tus requisitos o dudas"
+                            class="p-2 rounded bg-gray-800 border border-gray-700"></textarea>
+                    </div>
+                    <!-- Reemplazar el botón de envío en precios.html -->
+                    <div class="md:col-span-2 text-center">
+                        <button type="submit" class="adventure-button">
+                            <i class="fas fa-paper-plane mr-2"></i>Enviar Reserva por WhatsApp
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-8 mt-16">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-orange-500 font-bold text-xl mb-2">TU EXPERTO EN AVENTURAS</p>
+            <p class="text-orange-500 font-bold text-xl">+34 678 61 20 35</p>
+        </div>
+    </footer>
+
+    // Agregar este script al final de precios.html, justo antes de cerrar el body
+
+    <script>
+        // Función para manejar el envío del formulario
+        document.addEventListener('DOMContentLoaded', function () {
+            const formularioReserva = document.querySelector('form');
+
+            formularioReserva.addEventListener('submit', function (e) {
+                e.preventDefault(); // Prevenir el envío normal del formulario
+
+                // Recoger los datos del formulario
+                const nombre = document.getElementById('nombre').value;
+                const email = document.getElementById('email').value;
+                const telefono = document.getElementById('telefono').value;
+                const fecha = document.getElementById('fecha').value;
+                const excursion = document.getElementById('excursion').value;
+                const personas = document.getElementById('personas').value;
+                const mensaje = document.getElementById('mensaje').value;
+
+                // Formatear la fecha para mejor legibilidad
+                const fechaFormateada = new Date(fecha).toLocaleDateString('es-ES');
+
+                // Texto del tipo de excursión
+                const tipoExcursion = excursion === '1hora' ? 'Excursión 1 Hora (80€)' : 'Excursión 2 Horas (120€)';
+
+                // Construir el mensaje para WhatsApp
+                let mensajeWhatsApp = `¡Hola! Me gustaría hacer una reserva:%0A`;
+                mensajeWhatsApp += `*Nombre:* ${nombre}%0A`;
+                mensajeWhatsApp += `*Email:* ${email}%0A`;
+                mensajeWhatsApp += `*Teléfono:* ${telefono}%0A`;
+                mensajeWhatsApp += `*Fecha:* ${fechaFormateada}%0A`;
+                mensajeWhatsApp += `*Excursión:* ${tipoExcursion}%0A`;
+                mensajeWhatsApp += `*Personas:* ${personas}%0A`;
+                mensajeWhatsApp += `*Mensaje:* ${mensaje}`;
+
+                // Número de WhatsApp de la empresa
+                const numeroWhatsApp = "34678612035";
+
+                // Crear el enlace de WhatsApp y redirigir
+                const urlWhatsApp = `https://wa.me/+34658891114?text=${mensajeWhatsApp}`;
+                window.open(urlWhatsApp, '_blank');
+            });
+        });
+    </script>
+
+    <body class="secondary-page">
+        <!-- El resto del contenido sigue igual -->
+    </body>
+</body>
+
+</html>

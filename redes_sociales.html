@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Villaquadaventura</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="styles.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <!-- Banner de video con overlay -->
+    <div class="video-banner">
+        <video autoplay loop muted>
+            <source src="banner.mp4" type="video/mp4">
+            Tu navegador no soporta el formato de video.
+        </video>
+        <div class="banner-overlay">
+            <!-- Header -->
+            <div class="w-full max-w-screen-lg mx-auto flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                    <img src="logo1.jpg" alt="Villaquadaventura logo"
+                        class="w-24 h-24 rounded-full border-2 border-orange-500">
+                    <div class="ml-4">
+                        <h1 class="text-2xl font-bold text-orange-500">villaquadaventura</h1>
+                        <p class="text-sm">Villajoyosa, Costa Blanca, Spain</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-10">
+                <h2 class="highlight-text text-4xl md:text-5xl">CONTACTO</h2>
+                <p class="mt-4 text-xl">Conéctate con nosotros</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mx-auto px-4 py-8">
+        <!-- Navigation Tabs -->
+        <div class="nav-tabs">
+            <button class="nav-tab" onclick="window.location.href='index.html'">
+                <i class="fas fa-home mr-2"></i>Home
+            </button>
+            <button class="nav-tab active">
+                <i class="fas fa-address-book mr-2"></i>Contacto
+            </button>
+            <button class="nav-tab" onclick="window.location.href='galeria.html'">
+                <i class="fas fa-images mr-2"></i>Galería
+            </button>
+            <button class="nav-tab" onclick="window.location.href='precios.html'">
+                <i class="fas fa-tag mr-2"></i>Precios
+            </button>
+        </div>
+
+        <!-- Contenedor principal con borde animado -->
+        <div class="container-border text-center space-y-6 mt-8">
+            <h1 class="big-text">¡Contacta con nosotros!</h1>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Instagram -->
+                <div class="flex flex-col items-center space-y-2">
+                    <a href="https://www.instagram.com/villaquadaventura/" target="_blank"
+                        class="text-4xl text-pink-500">
+                        <i class="fab fa-instagram" style="animation: bounce 1s infinite;"></i>
+                    </a>
+                    <p class="text-white">Instagram</p>
+                </div>
+
+                <!-- TikTok -->
+                <div class="flex flex-col items-center space-y-2">
+                    <a href="https://www.tiktok.com/@villaquad.aventur?is_from_webapp=1&sender_device=pc"
+                        target="_blank" class="text-4xl">
+                        <img src="logo-tiktok.png" alt="TikTok" class="w-12 h-12"
+                            style="animation: zoom 1.5s infinite;">
+                    </a>
+                    <p class="text-white">TikTok</p>
+                </div>
+
+                <!-- WhatsApp -->
+                <div class="flex flex-col items-center space-y-2">
+                    <a href="https://wa.me/34678612035" target="_blank" class="text-4xl text-green-500">
+                        <i class="fab fa-whatsapp" style="animation: bounce 1s infinite;"></i>
+                    </a>
+                    <p class="text-white">WhatsApp</p>
+                    <p class="text-white font-bold">+34 678 61 20 35</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-8 mt-16">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-orange-500 font-bold text-xl mb-2">TU EXPERTO EN AVENTURAS</p>
+            <p class="text-orange-500 font-bold text-xl">+34 678 61 20 35</p>
+        </div>
+    </footer>
+
+    <script>
+        function openTab(tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].classList.remove("active");
+            }
+            tablinks = document.getElementsByClassName("nav-tab");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+            document.getElementById(tabName).classList.add("active");
+            event.currentTarget.classList.add("active");
+        }
+    </script>
+
+    <body class="secondary-page">
+        <!-- El resto del contenido sigue igual -->
+    </body>
+</body>
+
+</html>

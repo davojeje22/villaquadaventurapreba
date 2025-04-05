@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Villaquadaventura</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="styles.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <!-- Banner de video con overlay -->
+    <div class="video-banner">
+        <video autoplay loop muted>
+            <source src="banner.mp4" type="video/mp4">
+            Tu navegador no soporta el formato de video.
+        </video>
+        <div class="banner-overlay">
+            <!-- Header -->
+            <div class="w-full max-w-screen-lg mx-auto flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                    <img src="logo1.jpg" alt="Villaquadaventura logo"
+                        class="w-24 h-24 rounded-full border-2 border-orange-500">
+                    <div class="ml-4">
+                        <h1 class="text-2xl font-bold text-orange-500">villaquadaventura</h1>
+                        <p class="text-sm">Villajoyosa, Costa Blanca, Spain</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-10">
+                <h2 class="highlight-text text-4xl md:text-5xl">VIVE LA AVENTURA</h2>
+                <p class="mt-4 text-xl">Explora las montañas y playas de la Costa Blanca</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mx-auto px-4 py-8">
+        <!-- Navigation Tabs -->
+        <div class="nav-tabs">
+            <button class="nav-tab active" onclick="openTab('home')">
+                <i class="fas fa-home mr-2"></i>Home
+            </button>
+            <button class="nav-tab" onclick="window.location.href='redes_sociales.html'">
+                <i class="fas fa-address-book mr-2"></i>Contacto
+            </button>
+            <button class="nav-tab" onclick="openTab('gallery')">
+                <i class="fas fa-images mr-2"></i>Galería
+            </button>
+            <button class="nav-tab" onclick="openTab('prices')">
+                <i class="fas fa-tag mr-2"></i>Precios
+            </button>
+        </div>
+
+        <!-- Home Tab Content -->
+        <div id="home" class="tab-content active">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+                <div class="flex flex-col justify-center">
+                    <h2 class="big-text text-orange-500">EXCURSIONES EN QUAD</h2>
+                    <p class="text-lg mb-6">Descubre la belleza de la Costa Blanca desde una perspectiva única. Nuestras
+                        excursiones guiadas en quad te llevarán a través de increíbles paisajes montañosos con vistas
+                        panorámicas al mar Mediterráneo.</p>
+                    <div class="flex space-x-4 mt-4">
+                        <button class="adventure-button" onclick="openTab('prices')">
+                            <i class="fas fa-tag mr-2"></i>Ver precios
+                        </button>
+                        <button class="adventure-button" onclick="window.location.href='redes_sociales.html'">
+                            <i class="fas fa-phone-alt mr-2"></i>Contactar
+                        </button>
+                    </div>
+                </div>
+                <div class="relative">
+                    <img src="https://storage.googleapis.com/a1aa/image/fK7PHmSOpAUw8U013DrCPh-Q9VeaRj9YcmDja-crCI0.jpg"
+                        alt="Quad bike adventure" class="w-full h-auto rounded-lg shadow-lg"
+                        style="animation: pulse 4s infinite;">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+                        <p class="text-white text-lg font-bold">¡Diviértete como nunca!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Features -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
+                <div class="bg-gray-900 p-6 rounded-lg text-center hover:bg-gray-800 transition-all duration-300"
+                    onmouseover="this.classList.add('transform', 'scale-105')"
+                    onmouseout="this.classList.remove('transform', 'scale-105')">
+                    <i class="fas fa-mountain text-4xl text-orange-500 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Rutas Espectaculares</h3>
+                    <p>Recorre los mejores paisajes de la Costa Blanca con vistas impresionantes al mar.</p>
+                </div>
+                <div class="bg-gray-900 p-6 rounded-lg text-center hover:bg-gray-800 transition-all duration-300"
+                    onmouseover="this.classList.add('transform', 'scale-105')"
+                    onmouseout="this.classList.remove('transform', 'scale-105')">
+                    <i class="fas fa-camera text-4xl text-orange-500 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Paradas Fotográficas</h3>
+                    <p>Realizamos paradas en los mejores puntos para tomar fotos de recuerdo.</p>
+                </div>
+                <div class="bg-gray-900 p-6 rounded-lg text-center hover:bg-gray-800 transition-all duration-300"
+                    onmouseover="this.classList.add('transform', 'scale-105')"
+                    onmouseout="this.classList.remove('transform', 'scale-105')">
+                    <i class="fas fa-users text-4xl text-orange-500 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Guías Profesionales</h3>
+                    <p>Nuestros guías expertos garantizan una experiencia segura y divertida.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Gallery Tab Content -->
+        <div id="gallery" class="tab-content">
+            <h2 class="big-text text-center text-orange-500 mb-8">Nuestra Galería</h2>
+
+            <div class="carousel-container">
+                <div class="carousel" id="gallery-carousel">
+                    <!-- Los elementos del carrusel se generarán con JavaScript -->
+                </div>
+            </div>
+
+            <div class="carousel-controls">
+                <button class="carousel-control" onclick="rotateCarousel(-1)">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="carousel-control" onclick="rotateCarousel(1)">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Prices Tab Content -->
+        <div id="prices" class="tab-content">
+            <h2 class="big-text text-center text-orange-500">Nuestras Excursiones</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+                <div class="price-card">
+                    <div class="price-tag">80€</div>
+                    <h3 class="text-2xl font-bold text-orange-500">EXCURSIÓN 1 HORA</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+                        <div>
+                            <h4 class="text-lg font-bold mb-2 text-white">Incluye:</h4>
+                            <ul class="list-disc list-inside text-gray-300">
+                                <li>Exploración de ciudad y montañas</li>
+                                <li>Paradas para fotos panorámicas</li>
+                                <li>Guía experto</li>
+                                <li>Equipo de seguridad</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-bold mb-2 text-blue-400">Includes:</h4>
+                            <ul class="list-disc list-inside text-gray-300">
+                                <li>City and mountain exploration</li>
+                                <li>Stops for panoramic photos</li>
+                                <li>Expert guide</li>
+                                <li>Safety equipment</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <button class="adventure-button mt-6">
+                        <i class="fas fa-calendar-alt mr-2"></i>Reservar
+                    </button>
+                </div>
+
+                <div class="price-card">
+                    <div class="price-tag">120€</div>
+                    <h3 class="text-2xl font-bold text-orange-500">EXCURSIÓN 2 HORAS</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+                        <div>
+                            <h4 class="text-lg font-bold mb-2 text-white">Incluye:</h4>
+                            <ul class="list-disc list-inside text-gray-300">
+                                <li>Ruta off-road por montañas</li>
+                                <li>Vistas panorámicas al mar</li>
+                                <li>Visita a calas escondidas</li>
+                                <li>Paradas para fotos y descanso</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-bold mb-2 text-blue-400">Includes:</h4>
+                            <ul class="list-disc list-inside text-gray-300">
+                                <li>Off-road mountain route</li>
+                                <li>Panoramic sea views</li>
+                                <li>Visit to hidden coves</li>
+                                <li>Photo and rest stops</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <button class="adventure-button mt-6">
+                        <i class="fas fa-calendar-alt mr-2"></i>Reservar
+                    </button>
+                </div>
+            </div>
+
+            <div class="bg-gray-900 p-6 rounded-lg mt-8 text-center">
+                <h3 class="text-xl font-bold mb-2">INFORMACIÓN IMPORTANTE</h3>
+                <p class="mb-2"><i class="fas fa-users text-orange-500 mr-2"></i> <span class="text-blue-400">QUADS DE 2
+                        PLAZAS - SEGUNDO PASAJERO GRATIS</span></p>
+                <p class="mb-2"><i class="fas fa-id-card text-orange-500 mr-2"></i> <span class="text-yellow-500">EL
+                        CONDUCTOR DEBE TENER EL CARNET B EN VIGOR</span></p>
+                <p><i class="fas fa-id-card text-orange-500 mr-2"></i> <span class="text-yellow-500">THE DRIVER MUST
+                        HAVE A VALID CATEGORY B LICENSE</span></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-8 mt-16">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-orange-500 font-bold text-xl mb-2">TU EXPERTO EN AVENTURAS</p>
+            <p class="text-orange-500 font-bold text-xl">+34 678 61 20 35</p>
+        </div>
+
+        <script>
+            function openTab(evt, tabName) {
+                var i, tabcontent, tablinks;
+                tabcontent = document.getElementsByClassName("tab-content");
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].classList.remove("active");
+                }
+                tablinks = document.getElementsByTagName("a");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].classList.remove("border-l", "border-t", "border-r", "rounded-t", "text-blue-700");
+                    tablinks[i].classList.add("text-blue-500", "hover:text-blue-800");
+                }
+                document.getElementById(tabName).classList.add("active");
+                evt.currentTarget.classList.add("border-l", "border-t", "border-r", "rounded-t", "text-blue-700");
+            }
+        </script>
+</body>
+
+</html>
