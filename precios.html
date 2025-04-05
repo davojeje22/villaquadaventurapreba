@@ -42,14 +42,14 @@
             <button class="nav-tab" onclick="window.location.href='index.html'">
                 <i class="fas fa-home mr-2"></i>Home
             </button>
-            <button class="nav-tab" onclick="window.location.href='redes_sociales.html'">
-                <i class="fas fa-address-book mr-2"></i>Contacto
-            </button>
             <button class="nav-tab" onclick="window.location.href='galeria.html'">
                 <i class="fas fa-images mr-2"></i>Galería
             </button>
-            <button class="nav-tab active">
+            <button class="nav-tab active" onclick="window.location.href='precios.html'">
                 <i class="fas fa-tag mr-2"></i>Precios
+            </button>
+            <button class="nav-tab" onclick="window.location.href='redes_sociales.html'">
+                <i class="fas fa-address-book mr-2"></i>Contacto
             </button>
         </div>
 
@@ -81,7 +81,8 @@
                             </ul>
                         </div>
                     </div>
-                    <button class="adventure-button mt-6" onclick="window.location.href='redes_sociales.html'">
+                    <button class="adventure-button mt-6"
+                        onclick="document.getElementById('formulario-reserva').scrollIntoView({behavior: 'smooth'})">
                         <i class="fas fa-calendar-alt mr-2"></i>Reservar
                     </button>
                 </div>
@@ -109,7 +110,8 @@
                             </ul>
                         </div>
                     </div>
-                    <button class="adventure-button mt-6" onclick="window.location.href='redes_sociales.html'">
+                    <button class="adventure-button mt-6"
+                        onclick="document.getElementById('formulario-reserva').scrollIntoView({behavior: 'smooth'})">
                         <i class="fas fa-calendar-alt mr-2"></i>Reservar
                     </button>
                 </div>
@@ -126,7 +128,7 @@
             </div>
 
             <!-- Formulario de Reserva -->
-            <div class="container-border mt-16">
+            <div class="container-border mt-16" id="formulario-reserva">
                 <h3 class="text-2xl font-bold text-orange-500 mb-6">FORMULARIO DE RESERVA</h3>
                 <form class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div class="flex flex-col space-y-2">
@@ -184,7 +186,9 @@
             <p class="text-orange-500 font-bold text-xl">+34 678 61 20 35</p>
         </div>
     </footer>
-    
+
+    // Agregar este script al final de precios.html, justo antes de cerrar el body
+
     <script>
         // Función para manejar el envío del formulario
         document.addEventListener('DOMContentLoaded', function () {
@@ -222,7 +226,7 @@
                 const numeroWhatsApp = "34678612035";
 
                 // Crear el enlace de WhatsApp y redirigir
-                const urlWhatsApp = `https://wa.me/+34678612035?text=${mensajeWhatsApp}`;
+                const urlWhatsApp = `https://wa.me/+34658891114?text=${mensajeWhatsApp}`;
                 window.open(urlWhatsApp, '_blank');
             });
         });
